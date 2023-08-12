@@ -1,0 +1,11 @@
+{
+    "name": "CarMaintenance",
+    "alias": "carmaintenance",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CarMaintenance\\Providers\\CarMaintenanceServiceProvider"
+    ],
+    "files": []
+}

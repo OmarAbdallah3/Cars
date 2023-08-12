@@ -1,0 +1,11 @@
+{
+    "name": "CarInsurance",
+    "alias": "carinsurance",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CarInsurance\\Providers\\CarInsuranceServiceProvider"
+    ],
+    "files": []
+}

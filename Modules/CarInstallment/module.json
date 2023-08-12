@@ -1,0 +1,11 @@
+{
+    "name": "CarInstallment",
+    "alias": "carinstallment",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CarInstallment\\Providers\\CarInstallmentServiceProvider"
+    ],
+    "files": []
+}

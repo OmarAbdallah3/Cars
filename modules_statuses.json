@@ -1,0 +1,16 @@
+{
+    "Car": true,
+    "CarM": true,
+    "User": true,
+    "Media": true,
+    "Evaluation": true,
+    "CarInstallment": true,
+    "CarInsurance": true,
+    "CarMaintenance": true,
+    "Dealer": true,
+    "Post": true,
+    "Price": true,
+    "Action": true,
+    "CarNew": true,
+    "Review": true
+}
