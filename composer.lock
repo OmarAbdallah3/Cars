@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "010cb655a628ea1048b70c738b49a33b",
+    "content-hash": "dfaa543b5ff1f39017f83978ea8b51e2",
     "packages": [
         {
             "name": "64robots/nova-date-filter",
@@ -99,6 +99,42 @@
                 "source": "https://github.com/ampeco/nova-date-range-filter/tree/0.1.3"
             },
             "time": "2021-09-28T07:55:11+00:00"
+        },
+        {
+            "name": "avgprice/custom-card",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/CustomCard",
+                "reference": "459a7f028eb6f07443e12e98fae41d3a461c4839"
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Avgprice\\CustomCard\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Avgprice\\CustomCard\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova card.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "brick/math",
@@ -1875,17 +1911,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "4.27.7",
+            "version": "4.27.12",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "a1ae2195dcd156eb642038c34c7c147ff4cee6f3"
+                "reference": "6303d03443ed006a97df02b3e0e5cd35d388c27a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-a1ae2195dcd156eb642038c34c7c147ff4cee6f3-zip-0d4ec7.zip",
-                "reference": "a1ae2195dcd156eb642038c34c7c147ff4cee6f3",
-                "shasum": "2e63da323082ddb8cc0fedc80dc9c653378b04cc"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-6303d03443ed006a97df02b3e0e5cd35d388c27a-zip-1ea826.zip",
+                "reference": "6303d03443ed006a97df02b3e0e5cd35d388c27a",
+                "shasum": "871cb7680ed8a0ef4dc89c2316740570b659d6a9"
             },
             "require": {
                 "brick/money": "^0.5.0|^0.6.0|^0.7.0|^0.8.0",
@@ -1983,9 +2019,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel/nova/tree/v4.27.7"
+                "source": "https://github.com/laravel/nova/tree/v4.27.12"
             },
-            "time": "2023-08-10T02:51:47+00:00"
+            "time": "2023-08-13T04:33:30+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -2749,6 +2785,52 @@
             "time": "2023-08-05T12:09:49+00:00"
         },
         {
+            "name": "m-a-k-o/nova-custom-table-card",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/m-a-k-o/nova-custom-table-card.git",
+                "reference": "d91ec1312959f5efbfd39bbe148f75f1ceb94e5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/m-a-k-o/nova-custom-table-card/zipball/d91ec1312959f5efbfd39bbe148f75f1ceb94e5f",
+                "reference": "d91ec1312959f5efbfd39bbe148f75f1ceb94e5f",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.0",
+                "php": "^8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mako\\CustomTableCard\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mako\\CustomTableCard\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Nova custom table card. Show your latest data (orders, posts,...) as card or data you prefer.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/m-a-k-o/nova-custom-table-card/issues",
+                "source": "https://github.com/m-a-k-o/nova-custom-table-card/tree/4.0.1"
+            },
+            "time": "2022-08-12T14:17:48+00:00"
+        },
+        {
             "name": "maennchen/zipstream-php",
             "version": "3.1.0",
             "source": {
@@ -3238,16 +3320,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.16.0",
+            "version": "v4.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "19526a33fb561ef417e822e85f08a00db4059c17"
+                "reference": "844c228bf2b34a25ea8fed58f7929d14cf0c068e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/19526a33fb561ef417e822e85f08a00db4059c17",
-                "reference": "19526a33fb561ef417e822e85f08a00db4059c17",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/844c228bf2b34a25ea8fed58f7929d14cf0c068e",
+                "reference": "844c228bf2b34a25ea8fed58f7929d14cf0c068e",
                 "shasum": ""
             },
             "require": {
@@ -3288,9 +3370,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.16.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.17.0"
             },
-            "time": "2023-06-25T14:52:30+00:00"
+            "time": "2023-08-13T14:53:08+00:00"
         },
         {
             "name": "nova-fields/rating",
@@ -3506,16 +3588,16 @@
         },
         {
             "name": "openspout/openspout",
-            "version": "v4.15.0",
+            "version": "v4.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openspout/openspout.git",
-                "reference": "907a2ff042741b1f25b6e636d18ce9d7fc4c8333"
+                "reference": "ef5396bfd44b3dfa092e78458966d25c7a2c931a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openspout/openspout/zipball/907a2ff042741b1f25b6e636d18ce9d7fc4c8333",
-                "reference": "907a2ff042741b1f25b6e636d18ce9d7fc4c8333",
+                "url": "https://api.github.com/repos/openspout/openspout/zipball/ef5396bfd44b3dfa092e78458966d25c7a2c931a",
+                "reference": "ef5396bfd44b3dfa092e78458966d25c7a2c931a",
                 "shasum": ""
             },
             "require": {
@@ -3583,7 +3665,7 @@
             ],
             "support": {
                 "issues": "https://github.com/openspout/openspout/issues",
-                "source": "https://github.com/openspout/openspout/tree/v4.15.0"
+                "source": "https://github.com/openspout/openspout/tree/v4.15.1"
             },
             "funding": [
                 {
@@ -3595,7 +3677,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-06-19T07:48:22+00:00"
+            "time": "2023-08-11T08:32:26+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -9966,7 +10048,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "avgprice/custom-card": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

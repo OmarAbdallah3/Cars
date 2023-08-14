@@ -12,7 +12,9 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use League\Glide\Manipulators\Background;
 use Modules\Car\Entities\Car;
 use Modules\Car\Nova\Car as NovaCar;
-use Nikaia\Rating\Rating;
+use Modules\Review\Custom\CustomRating;
+use Nikaia\Rating\Rating as RatingRating;
+use NovaField\Rating\Rating ;
 use Spatie\LaravelIgnition\Solutions\MakeViewVariableOptionalSolution;
 
 use function Laravel\Prompts\text;
@@ -57,12 +59,21 @@ class Review extends Resource
             ->rules('required','max:255'),
 
             Text::make('Rate', 'rate', function () {
-                return '<div style="background:blue"> your rate sumbmitted </div>';
+                return '<div class="rating">
+        <input type="radio" id="rate" name="rate" value="5" /><label for="star5"></label>
+        <input type="radio" id="rate" name="rate" value="4" /><label for="star4"></label>
+        <input type="radio" id="rate" name="rate" value="3" /><label for="star3"></label>
+        <input type="radio" id="rate" name="rate" value="2" /><label for="star2"></label>
+        <input type="radio" id="rate" name="rate" value="1" /><label for="star1"></label>
+    </div>    ';
             })->asHtml()
             ->exceptOnForms(),
 
             Number::make('Rate')
-            ->onlyOnForms(),
+            ->onlyOnForms()
+            ->rules('required')
+            ->min(1)
+            ->max(5),
 
             BelongsTo::make('User'),
 

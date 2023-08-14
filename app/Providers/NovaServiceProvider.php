@@ -3,26 +3,27 @@
 namespace App\Providers;
 
 use App\Nova\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
-use Laravel\Nova\NovaApplicationServiceProvider;
-use Modules\Car\Nova\Accessory;
 use Modules\Car\Nova\Car;
-use Modules\Car\Nova\CarMake;
-use Modules\Car\Nova\CarModel;
-use Modules\Car\Nova\Engine;
-use Modules\Car\Nova\Specification;
-use Modules\CarInstallment\Nova\CarInstallment;
-use Modules\CarInsurance\Nova\CarInsurance;
-use Modules\CarMaintenance\Nova\CarMaintenance;
-use Modules\CarNew\Nova\CarNews;
-use Modules\Dealer\Nova\Dealer;
-use Modules\Evaluation\Nova\Evaluation;
 use Modules\Post\Nova\Post;
+use Illuminate\Http\Request;
+use Modules\Car\Nova\Engine;
+use Modules\Car\Nova\CarMake;
 use Modules\Price\Nova\Price;
+use Modules\Car\Nova\CarModel;
+use Modules\Car\Nova\Accessory;
+use Modules\Dealer\Nova\Dealer;
 use Modules\Review\Nova\Review;
+use Modules\CarNew\Nova\CarNews;
+use Modules\Car\Nova\Specification;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Blade;
+use Modules\Evaluation\Nova\Evaluation;
+use Mako\CustomTableCard\CustomTableCard;
+use Modules\CarInsurance\Nova\CarInsurance;
+use Modules\CarInstallment\Nova\CarInstallment;
+use Modules\CarMaintenance\Nova\CarMaintenance;
+use Laravel\Nova\NovaApplicationServiceProvider;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -40,6 +41,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Nova::userTimezone(function (Request $request) {
             return $request->user()?->timezone;
         });
+
+        
 
        
     }
@@ -136,6 +139,18 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Dealer::class,
         Review::class,
     ]);
+}
+
+public function cards()
+{
+    return [
+        // ...
+
+        // all the parameters are required excelpt title
+        new CustomTableCard(
+            array (['car_brand']), array (['total_price']),
+        ),
+    ];
 }
 
 }

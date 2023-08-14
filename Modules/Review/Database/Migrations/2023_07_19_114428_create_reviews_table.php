@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('car_id');
             $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
             $table->string('comment');
-            $table->tinyInteger('rate')->nullable();
+            $table->tinyInteger('rate');
             $table->timestamps();
         });
     }
