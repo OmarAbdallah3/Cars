@@ -23,7 +23,9 @@
         "nova-fields/rating": "^1.0",
         "nwidart/laravel-modules": "^10.0",
         "spatie/laravel-medialibrary": "^10.11",
+        "spatie/laravel-permission": "^5.10",
         "symfony/polyfill-intl-icu": "^1.27",
+        "vyuldashev/nova-permission": "^3.2",
         "wdelfuego/nova4-formattable-date": "^1.0",
         "yieldstudio/nova-phone-field": "^2.0"
     },

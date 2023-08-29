@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Car\Entities\Car;
 use Modules\Price\Entities\Price;
+use Spatie\Permission\Traits\HasRoles;
 
 class CarInstallment extends Model
 {
-    use HasFactory;
+    use HasFactory,HasRoles;
 
     protected $fillable = ['installment_method','period','term'];
 

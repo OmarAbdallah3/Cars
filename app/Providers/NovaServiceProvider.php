@@ -24,6 +24,17 @@ use Modules\CarInsurance\Nova\CarInsurance;
 use Modules\CarInstallment\Nova\CarInstallment;
 use Modules\CarMaintenance\Nova\CarMaintenance;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Vyuldashev\NovaPermission\AttachToRole;
+use Vyuldashev\NovaPermission\ForgetCachedPermissions;
+use Vyuldashev\NovaPermission\NovaPermissionTool;
+use Vyuldashev\NovaPermission\Permission;
+use Vyuldashev\NovaPermission\PermissionBooleanGroup;
+use Vyuldashev\NovaPermission\PermissionPolicy;
+use Vyuldashev\NovaPermission\Role;
+use Vyuldashev\NovaPermission\RoleBooleanGroup;
+use Vyuldashev\NovaPermission\RolePolicy;
+use Vyuldashev\NovaPermission\RoleSelect;
+use Vyuldashev\NovaPermission\ToolServiceProvider;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -96,7 +107,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            NovaPermissionTool::make()
+            ->roleResource(User::class)
+            ->permissionResource(User::class),
+        ];
     }
 
     /**
@@ -138,6 +153,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Post::class,
         Dealer::class,
         Review::class,
+        Role::class,
+        Permission::class,
+        
     ]);
 }
 

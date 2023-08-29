@@ -18,6 +18,8 @@ use Modules\Dealer\Entities\Dealer;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Symfony\Component\CssSelector\Node\Specificity;
+use Vyuldashev\NovaPermission\Permission;
+use Vyuldashev\NovaPermission\Role;
 
 class Car extends Model implements HasMedia
 {
@@ -102,5 +104,15 @@ class Car extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('images');
+    }
+
+    public function roles()
+    {
+        $this->morphToMany(Role::class,'roleable');
+    }
+
+    public function permissions()
+    {
+        $this->morphToMany(Permission::class,'permissionable');
     }
 }

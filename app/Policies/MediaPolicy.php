@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\Product;
-use App\Models\User;
+use Modules\User\Entities\User;
 use Illuminate\Auth\Access\Response;
 
 class MediaPolicy
@@ -29,45 +29,70 @@ class MediaPolicy
     /**
      * Determine whether the user can create models.
      */
-    public function create(User $user): bool
+    public function create(User $user)
     {
-        return $user->is_admin;
+        // if($user->hasRole('Super-Admin')){
+        //     return true;
+        // }
+        if($user->can('create')){
+            return $user->can('create');
+        }
 
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user): bool
+    public function update(User $user)
     {
-        return $user->is_admin;
+        // if($user->hasRole('Super-Admin')){
+        //     return true;
+        // }
+        if($user->can('create')){
+            return $user->can('create');
+        }
 
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user): bool
+    public function delete(User $user)
     {
-        return $user->is_admin;
+        // if($user->hasRole('Super-Admin')){
+        //     return true;
+        // }
+        if($user->can('create')){
+            return $user->can('create');
+        }
 
     }
 
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user): bool
+    public function restore(User $user)
     {
-        return $user->is_admin;
+        // if($user->hasRole('Super-Admin')){
+        //     return true;
+        // }
+        if($user->can('create')){
+            return $user->can('create');
+        }
 
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user): bool
+    public function forceDelete(User $user)
     {
-        return $user->is_admin;
+        // if($user->hasRole('Super-Admin')){
+        //     return true;
+        // }
+        if($user->can('create')){
+            return $user->can('create');
+        }
 
     }
 }
